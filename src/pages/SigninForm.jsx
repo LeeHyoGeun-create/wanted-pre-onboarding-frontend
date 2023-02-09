@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { loginFetch } from "../module/api";
 import { useNavigate } from "react-router-dom";
 
-const SigninForm = ({ history }) => {
+const SigninForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
