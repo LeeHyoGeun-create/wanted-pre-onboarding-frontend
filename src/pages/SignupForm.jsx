@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   StyledContainer,
   StyledForm,
@@ -7,10 +7,18 @@ import {
   StyledInputContaier,
 } from "../components/styled/FormPage.styled";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("JWT")) {
+      navigate("/todo", { replace: true });
+    }
+  }, [navigate]);
 
   const onSubmit = async (e) => {
     e.preventDefault();
