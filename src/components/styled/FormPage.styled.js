@@ -19,7 +19,7 @@ export const StyledContainer = styled.section`
   }
 `;
 
-export const StyledFormContainer = styled.form`
+export const StyledFormContainer = styled.section`
   display: flex;
   flex-direction: column;
   background-color: white;
