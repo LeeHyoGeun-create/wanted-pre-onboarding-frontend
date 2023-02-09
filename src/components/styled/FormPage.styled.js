@@ -17,6 +17,10 @@ export const StyledContainer = styled.section`
     color: white;
     border: none;
   }
+
+  button:disabled {
+    background: grey;
+  }
 `;
 
 export const StyledFormContainer = styled.section`
