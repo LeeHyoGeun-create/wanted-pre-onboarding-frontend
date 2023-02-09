@@ -7,7 +7,7 @@ import {
   StyledInputContaier,
 } from "../components/styled/FormPage.styled";
 import { Link } from "react-router-dom";
-import { loginFetch } from "../module/api";
+import { signinFetch } from "../module/api";
 import { useNavigate } from "react-router-dom";
 
 const SigninForm = () => {
@@ -25,7 +25,7 @@ const SigninForm = () => {
     e.preventDefault();
     setEmail("");
     setPassword("");
-    const success = await loginFetch({ email, password });
+    const success = await signinFetch({ email, password });
     if (success) {
       navigate("/todo", { replace: true });
     }

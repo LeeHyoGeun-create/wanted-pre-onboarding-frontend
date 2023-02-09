@@ -8,6 +8,7 @@ import {
 } from "../components/styled/FormPage.styled";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { signupFetch } from "../module/api";
 
 const SignupForm = () => {
   const [email, setEmail] = useState("");
@@ -22,6 +23,10 @@ const SignupForm = () => {
 
   const onSubmit = async (e) => {
     e.preventDefault();
+    const success = await signupFetch({ email, password });
+    if (success) {
+      navigate("/signin", { replace: true });
+    }
   };
 
   const emailValidation = (email) => {
