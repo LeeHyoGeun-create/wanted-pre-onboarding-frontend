@@ -43,16 +43,17 @@ const EditCardBody = ({
       <input
         type="text"
         value={todo}
+        data-testid="modify-input"
         placeholder="Input your Todo"
         onChange={onTodoChange}
         onKeyPress={onKeyPress}
       />
       <Styled.StyledFlex>
         <div>
-          <button onClick={onEditClick}>
+          <button data-testid="submit-button" onClick={onEditClick}>
             <AiOutlineCheckSquare />
           </button>
-          <button onClick={onCancelClick}>
+          <button data-testid="cancel-button" onClick={onCancelClick}>
             <MdOutlineCancelPresentation />
           </button>
         </div>
