@@ -35,10 +35,10 @@ const ViewCardBody = ({
             onChange={onDoneClick}
             checked={isCompleted}
           />
-          <button onClick={onEditClick}>
+          <button onClick={onEditClick} data-testid="modify-button">
             <AiOutlineEdit />
           </button>
-          <button onClick={() => onDeleteClick()}>
+          <button data-testid="delete-button" onClick={() => onDeleteClick()}>
             <AiOutlineDelete />
           </button>
         </div>
