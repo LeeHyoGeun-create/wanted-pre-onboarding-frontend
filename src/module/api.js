@@ -70,7 +70,6 @@ export const createTodoFetch = async (todo) => {
     if (responce.status === 201) {
       return true;
     }
-    return false;
   } catch (e) {
     throw new Error(e);
   }
@@ -93,6 +92,57 @@ export const getTodosFetch = async () => {
     }
     const todos = await responce.json();
     return todos;
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
+export const updateTodosFetch = async (id, boolean, todo) => {
+  try {
+    const token = localStorage.getItem("JWT");
+    const responce = await fetch(
+      `${process.env.REACT_APP_API_URL_TEST}/todos${id}`,
+      {
+        method: "PUT",
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+        body: {
+          todo,
+          isCompleted: boolean,
+        },
+      }
+    );
+    if (!responce.ok) {
+      throw new Error("서버에 이상이 있습니다 status: " + responce.status);
+    }
+    if (responce.status === 201) {
+      return true;
+    }
+  } catch (e) {
+    throw new Error(e);
+  }
+};
+
+export const deleteTodosFetch = async (id) => {
+  try {
+    const token = localStorage.getItem("JWT");
+    const responce = await fetch(
+      `${process.env.REACT_APP_API_URL_TEST}/todos${id}`,
+      {
+        method: "DELETE",
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+    if (!responce.ok) {
+      throw new Error("서버에 이상이 있습니다 status: " + responce.status);
+    }
+    if (responce.status === 204) {
+      return true;
+    }
   } catch (e) {
     throw new Error(e);
   }
