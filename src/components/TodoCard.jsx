@@ -4,7 +4,6 @@ import * as Styled from "./styled/TodoCard.styled";
 import EditCardBody from "./EditCardBody";
 import ViewCardBody from "./ViewCardBody";
 
-//https://codepen.io/eyupucmaz/pen/oNbeXOb
 const TodoCard = ({ id, todo, isCompleted, setChange }) => {
   const [editMode, setEditMode] = useState(false);
 

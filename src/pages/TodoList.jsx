@@ -21,7 +21,9 @@ const TodoList = () => {
   }, [navigate]);
 
   useEffect(() => {
-    getTodos();
+    if (localStorage.getItem("JWT")) {
+      getTodos();
+    }
   }, [change]);
 
   return (

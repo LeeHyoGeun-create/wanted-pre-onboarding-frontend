@@ -14,7 +14,6 @@ export const signinFetch = async (obj) => {
       throw new Error("서버에 이상이 있습니다 status: " + responce.status);
     }
     const data = await responce.json();
-    console.log(data);
     if (data.access_token) {
       localStorage.setItem("JWT", data.access_token);
       return true;
