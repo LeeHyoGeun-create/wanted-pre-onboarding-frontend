@@ -1,5 +1,5 @@
 import GlobalStyle from "./components/styled/global.styled";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HashRouter, Routes, Route } from "react-router-dom";
 import TodoList from "./pages/TodoList";
 import SigninForm from "./pages/SigninForm";
 import SignupForm from "./pages/SignupForm";
@@ -9,14 +9,14 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <BrowserRouter>
+      <HashRouter>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/todo" element={<TodoList />} />
           <Route path="/signin" element={<SigninForm />} />
           <Route path="/signup" element={<SignupForm />} />
         </Routes>
-      </BrowserRouter>
+      </HashRouter>
     </>
   );
 }
