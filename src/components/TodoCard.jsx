@@ -6,10 +6,25 @@ import ViewCardBody from "./ViewCardBody";
 
 const TodoCard = ({ id, todo, isCompleted, setChange }) => {
   const [editMode, setEditMode] = useState(false);
+  const colors = [
+    "#B9F3E4",
+    "#EA8FEA",
+    "#FFAACF",
+    "#F6E6C2",
+    "#FDFDBD",
+    "#C8FFD4",
+    "#B8E8FC",
+    "#B1AFFF",
+    "#B5D5C5",
+  ];
 
   return (
     <Styled.StyledTodoCard isCompleted={isCompleted}>
-      <Styled.StyledCardHeader></Styled.StyledCardHeader>
+      <Styled.StyledCardHeader
+        color={colors[Math.floor(Math.random() * colors.length)]}
+      >
+        <div></div>
+      </Styled.StyledCardHeader>
       {editMode ? (
         <EditCardBody
           id={id}

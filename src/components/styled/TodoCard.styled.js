@@ -29,10 +29,10 @@ export const StyledFlex = styled.div`
 `;
 
 export const StyledCardHeader = styled.div`
-  img {
+  div {
     width: 100%;
     height: 200px;
-    object-fit: cover;
+    background-color: ${(props) => props.color};
   }
 `;
 
