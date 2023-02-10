@@ -31,7 +31,7 @@ const SigninForm = () => {
     }
   };
 
-  const emailValidation = (email) => {
+  const emailValidation = () => {
     return email.includes("@");
   };
 
@@ -40,7 +40,7 @@ const SigninForm = () => {
   };
 
   const validate = () => {
-    return emailValidation(email) && passwordValidation(password);
+    return emailValidation() && passwordValidation();
   };
 
   const onChangeEmail = (e) => {
@@ -73,6 +73,7 @@ const SigninForm = () => {
               onChange={onChangeEmail}
               data-testid="email-input"
             />
+            {emailValidation() || <span>@이 포함되어야 합니다.</span>}
           </StyledInputContaier>
           <StyledInputContaier>
             <label htmlFor="password">비밀번호</label>
@@ -84,6 +85,7 @@ const SigninForm = () => {
               onChange={onChangePassword}
               minLength={8}
             />
+            {passwordValidation() || <span>8자 이상이어야 합니다.</span>}
           </StyledInputContaier>
           <button data-testid="signin-button" disabled={!validate()}>
             로그인하기

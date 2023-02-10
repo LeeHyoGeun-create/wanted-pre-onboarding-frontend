@@ -70,4 +70,9 @@ export const StyledInputContaier = styled.div`
   input {
     height: 40px;
   }
+
+  span {
+    margin-top: 10px;
+    color: red;
+  }
 `;
