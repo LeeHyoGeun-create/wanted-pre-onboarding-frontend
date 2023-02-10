@@ -101,7 +101,7 @@ export const updateTodosFetch = async (id, boolean, todo) => {
   try {
     const token = localStorage.getItem("JWT");
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos${id}`,
+      `${process.env.REACT_APP_API_URL_TEST}/todos/${id}`,
       {
         method: "PUT",
         headers: {
