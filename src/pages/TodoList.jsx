@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getTodosFetch } from "../module/api";
+import Input from "../components/Input";
+import Todos from "../components/Todos";
 
 const TodoList = () => {
   const [todos, setTodos] = useState([]);
+  const [change, setChange] = useState(false);
   const navigate = useNavigate();
 
   const getTodos = async () => {
@@ -19,9 +22,14 @@ const TodoList = () => {
 
   useEffect(() => {
     getTodos();
-  }, []);
+  }, [change]);
 
-  return <div>todoList</div>;
+  return (
+    <main>
+      <Input setChange={setChange} />
+      <Todos data={todos} setChange={setChange} />
+    </main>
+  );
 };
 
 export default TodoList;
