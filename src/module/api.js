@@ -61,7 +61,7 @@ export const createTodoFetch = async (todo) => {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify(todo),
+        body: JSON.stringify({ todo }),
       }
     );
     if (!responce.ok) {
@@ -108,10 +108,7 @@ export const updateTodosFetch = async (id, boolean, todo) => {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
-        body: {
-          todo,
-          isCompleted: boolean,
-        },
+        body: JSON.stringify({ isCompleted: boolean, todo }),
       }
     );
     if (!responce.ok) {
