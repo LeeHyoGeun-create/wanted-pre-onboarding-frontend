@@ -126,7 +126,7 @@ export const deleteTodosFetch = async (id) => {
   try {
     const token = localStorage.getItem("JWT");
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos${id}`,
+      `${process.env.REACT_APP_API_URL_TEST}/todos/${id}`,
       {
         method: "DELETE",
         headers: {
