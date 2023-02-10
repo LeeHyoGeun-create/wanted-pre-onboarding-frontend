@@ -5,9 +5,8 @@ import { StyledInputWrrap } from "./styled/Input.styled";
 const Input = ({ setChange }) => {
   const [todo, setToDo] = useState("");
 
-  const onPostValue = async () => {
-    const value = await createTodoFetch(todo);
-    console.log(value);
+  const onPostValue = () => {
+    createTodoFetch(todo);
   };
 
   const onSubmit = async (e) => {

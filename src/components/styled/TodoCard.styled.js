@@ -54,10 +54,6 @@ export const StyledCardBody = styled.div`
     border-bottom: 1px solid black;
     font-size: 18px;
   }
-
-  input:hover {
-    color: rgba(0, 0, 0, 0.1);
-  }
 `;
 
 export const StyledTodoCard = styled.li`
@@ -67,13 +63,13 @@ export const StyledTodoCard = styled.li`
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   flex: 1 0 300px;
+`;
 
-  input {
-    transform: scale(1.2);
-    margin-right: 7px;
-    border: none;
-    background-color: rgba(0, 0, 0, 0.01);
-    border-radius: 5px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
-  }
+export const StyledCheckBox = styled.input`
+  transform: scale(1.2);
+  margin-right: 7px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.01);
+  border-radius: 5px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
 `;

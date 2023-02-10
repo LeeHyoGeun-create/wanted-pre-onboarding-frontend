@@ -29,7 +29,7 @@ const ViewCardBody = ({
       <h2>{todoValue}</h2>
       <Styled.StyledFlex>
         <div>
-          <input
+          <Styled.StyledCheckBox
             type="checkbox"
             name="isCompleted"
             onChange={onDoneClick}
