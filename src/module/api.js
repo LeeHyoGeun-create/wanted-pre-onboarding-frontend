@@ -1,7 +1,7 @@
 export const signinFetch = async (obj) => {
   try {
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/auth/signin`,
+      `${process.env.REACT_APP_API_URL}/auth/signin`,
       {
         method: "POST",
         headers: {
@@ -28,7 +28,7 @@ export const signinFetch = async (obj) => {
 export const signupFetch = async (obj) => {
   try {
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/auth/signup`,
+      `${process.env.REACT_APP_API_URL}/auth/signup`,
       {
         method: "POST",
         headers: {
@@ -52,17 +52,14 @@ export const signupFetch = async (obj) => {
 export const createTodoFetch = async (todo) => {
   try {
     const token = localStorage.getItem("JWT");
-    const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos`,
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({ todo }),
-      }
-    );
+    const responce = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${token}`,
+      },
+      body: JSON.stringify({ todo }),
+    });
     if (!responce.ok) {
       throw new Error("서버에 이상이 있습니다 status: " + responce.status);
     }
@@ -77,15 +74,12 @@ export const createTodoFetch = async (todo) => {
 export const getTodosFetch = async () => {
   try {
     const token = localStorage.getItem("JWT");
-    const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos`,
-      {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      }
-    );
+    const responce = await fetch(`${process.env.REACT_APP_API_URL}/todos`, {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
     if (!responce.ok) {
       throw new Error("서버에 이상이 있습니다 status: " + responce.status);
     }
@@ -100,7 +94,7 @@ export const updateTodosFetch = async (id, boolean, todo) => {
   try {
     const token = localStorage.getItem("JWT");
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos/${id}`,
+      `${process.env.REACT_APP_API_URL}/todos/${id}`,
       {
         method: "PUT",
         headers: {
@@ -125,7 +119,7 @@ export const deleteTodosFetch = async (id) => {
   try {
     const token = localStorage.getItem("JWT");
     const responce = await fetch(
-      `${process.env.REACT_APP_API_URL_TEST}/todos/${id}`,
+      `${process.env.REACT_APP_API_URL}/todos/${id}`,
       {
         method: "DELETE",
         headers: {
