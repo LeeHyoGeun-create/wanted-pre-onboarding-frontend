@@ -56,7 +56,7 @@ export const StyledCardBody = styled.div`
   }
 `;
 
-export const StyledTodoCard = styled.article`
+export const StyledTodoCard = styled.li`
   margin: 10px;
   background-color: ${(props) => (props.isCompleted ? "#d1d1d1" : "#fff")};
   border-radius: 10px;

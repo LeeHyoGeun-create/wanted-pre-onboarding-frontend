@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-const StyledTodos = styled.section`
+const StyledTodos = styled.ul`
   display: flex;
   width: 100%;
   max-width: 1140px;
